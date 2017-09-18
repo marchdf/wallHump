@@ -51,9 +51,9 @@ Using this repository
 
 A.  Generating the meshes
 
-    1. Get CGNS mesh from `the NASA website <https://turbmodels.larc.nasa.gov/nasahump_grids.html>`_
-    #. Use Pointwise to label the surfaces and set the BC
-    #. Use Shreyas' `near-distance-to-wall calculator <https://github.com/NaluCFD/NaluWindUtils>`_ to get the NDTW.
+    1. Put the CGNS meshes from `the NASA website <https://turbmodels.larc.nasa.gov/nasahump_grids.html>`_ in each run directory
+    #. Use Pointwise to execute the `pw_gen_exo.glf` scripts
+    #. Run the `add_ndtw.sh` script to get the NDTW (uses Shreyas' `near-distance-to-wall calculator <https://github.com/NaluCFD/NaluWindUtils>`_).
 
 B. Running
 
