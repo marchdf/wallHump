@@ -23,7 +23,7 @@ linear_solvers:
     max_iterations: 50
     kspace: 50
     output_level: 0
-    muelu_xml_file_name: ../milestone.xml
+    muelu_xml_file_name: ../muelu.xml
 
 realms:
 
@@ -140,7 +140,7 @@ realms:
             minimum_distance_to_wall: ndtw
 
         - turbulence_model_constants:
-            SDRWallFactor: 10.0
+            SDRWallFactor: 0.625
 
     turbulence_averaging:
       time_filter_interval: 100000.0
@@ -181,8 +181,8 @@ realms:
           line_of_site_specifications:
             - name: results/probe_profile0
               number_of_points: 100
-              tip_coordinates: [0.65, 0.0, 0.0]
-              tail_coordinates: [0.65, 0.0, 0.9]
+              tip_coordinates: [-2.14, 0.0, 0.0]
+              tail_coordinates: [-2.14, 0.0, 0.9]
 
           output_variables:
             - field_name: velocity
@@ -196,8 +196,8 @@ realms:
           line_of_site_specifications:
             - name: results/probe_profile1
               number_of_points: 100
-              tip_coordinates: [0.8, 0.0, 0.0]
-              tail_coordinates: [0.8, 0.0, 0.9]
+              tip_coordinates: [0.65, 0.0, 0.0]
+              tail_coordinates: [0.65, 0.0, 0.9]
 
           output_variables:
             - field_name: velocity
@@ -211,8 +211,8 @@ realms:
           line_of_site_specifications:
             - name: results/probe_profile2
               number_of_points: 100
-              tip_coordinates: [0.9, 0.0, 0.0]
-              tail_coordinates: [0.9, 0.0, 0.9]
+              tip_coordinates: [0.66, 0.0, 0.0]
+              tail_coordinates: [0.66, 0.0, 0.9]
 
           output_variables:
             - field_name: velocity
@@ -226,8 +226,8 @@ realms:
           line_of_site_specifications:
             - name: results/probe_profile3
               number_of_points: 100
-              tip_coordinates: [1.0, 0.0, 0.0]
-              tail_coordinates: [1.0, 0.0, 0.9]
+              tip_coordinates: [0.8, 0.0, 0.0]
+              tail_coordinates: [0.8, 0.0, 0.9]
 
           output_variables:
             - field_name: velocity
@@ -241,8 +241,8 @@ realms:
           line_of_site_specifications:
             - name: results/probe_profile4
               number_of_points: 100
-              tip_coordinates: [1.1, 0.0, 0.0]
-              tail_coordinates: [1.1, 0.0, 0.9]
+              tip_coordinates: [0.9, 0.0, 0.0]
+              tail_coordinates: [0.9, 0.0, 0.9]
 
           output_variables:
             - field_name: velocity
@@ -256,8 +256,8 @@ realms:
           line_of_site_specifications:
             - name: results/probe_profile5
               number_of_points: 100
-              tip_coordinates: [1.2, 0.0, 0.0]
-              tail_coordinates: [1.2, 0.0, 0.9]
+              tip_coordinates: [1.0, 0.0, 0.0]
+              tail_coordinates: [1.0, 0.0, 0.9]
 
           output_variables:
             - field_name: velocity
@@ -270,6 +270,36 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile6
+              number_of_points: 100
+              tip_coordinates: [1.1, 0.0, 0.0]
+              tail_coordinates: [1.1, 0.0, 0.9]
+
+          output_variables:
+            - field_name: velocity
+              field_size: 3
+            - field_name: reynolds_stress
+              field_size: 6
+
+        - name: probe_profile7
+          from_target_part: Unspecified-2-HEX
+
+          line_of_site_specifications:
+            - name: results/probe_profile7
+              number_of_points: 100
+              tip_coordinates: [1.2, 0.0, 0.0]
+              tail_coordinates: [1.2, 0.0, 0.9]
+
+          output_variables:
+            - field_name: velocity
+              field_size: 3
+            - field_name: reynolds_stress
+              field_size: 6
+
+        - name: probe_profile8
+          from_target_part: Unspecified-2-HEX
+
+          line_of_site_specifications:
+            - name: results/probe_profile8
               number_of_points: 100
               tip_coordinates: [1.3, 0.0, 0.0]
               tail_coordinates: [1.3, 0.0, 0.9]

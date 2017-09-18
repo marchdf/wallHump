@@ -73,36 +73,10 @@ RANS SST
 Verification
 ~~~~~~~~~~~~
 
-There is good agreement between Nalu's SST implementation
-and
-[NASA's SST implementation](https://turbmodels.larc.nasa.gov/flatplate_sst.html).
+There is good agreement between Nalu's SST implementation and `NASA's
+SST implementation
+<https://turbmodels.larc.nasa.gov/flatplate_sst.html>`_.
 
-#### Convergence of skin friction coefficient at x = 0.75
-<img src="./cf_0.75.png" alt="Cf" width="400">
-
-#### Convergence of skin friction coefficient at x = 0.6321075
-<img src="./cf_0.63.png" alt="Cf" width="400">
-
-#### Convergence of skin friction coefficient at x = 0.8678025
-<img src="./cf_0.86.png" alt="Cf" width="400">
-
-#### Convergence of drag coefficient
-<img src="./cd.png" alt="Cd" width="400">
-
-#### Convergence of pressure drag coefficient
-<img src="./cdp.png" alt="Cd" width="400">
-
-#### Convergence of velocity drag coefficient
-<img src="./cdv.png" alt="Cd" width="400">
-
-#### Convergence of lift coefficient
-<img src="./cl.png" alt="Cd" width="400">
-
-#### Skin friction coefficient along the bump at t = 0.5 (1409x641 mesh)
-<img src="./wall_cf.png" alt="wall_Cf" width="400">
-
-#### Pressure coefficient along the bump at t = 0.5 (1409x641 mesh)
-<img src="./wall_cp.png" alt="wall_Cf" width="400">
 
 Thanks
 ------
