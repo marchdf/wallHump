@@ -347,6 +347,7 @@ Time_Integrators:
       termination_time: 1000
       time_stepping_type: adaptive
       time_step_count: 0
+      second_order_accuracy: yes
 
       realms:
         - realm_1
