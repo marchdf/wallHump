@@ -29,7 +29,7 @@ realms:
 
   - name: realm_1
     mesh: hump2newtop_noplenumZ1633x433_ndtw.exo
-    use_edges: yes
+    use_edges: no
     check_for_missing_bcs: yes
     automatic_decomposition_type: rcb
 
@@ -344,7 +344,7 @@ Time_Integrators:
       name: ti_1
       start_time: 0
       time_step: 1.0e-10
-      termination_time: 1000
+      termination_time: 0.3
       time_stepping_type: adaptive
       time_step_count: 0
       second_order_accuracy: yes
