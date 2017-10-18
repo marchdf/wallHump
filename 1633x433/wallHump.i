@@ -16,22 +16,21 @@ linear_solvers:
     output_level: 0
 
   - name: solve_cont
-    type: tpetra
-    method: gmres
-    preconditioner: muelu
+    type: hypre
+    method: hypre_gmres
+    preconditioner: boomerAMG
     tolerance: 1e-5
-    max_iterations: 50
-    kspace: 50
+    max_iterations: 200
+    kspace: 5
     output_level: 0
-    muelu_xml_file_name: ../muelu.xml
 
 realms:
 
   - name: realm_1
     mesh: hump2newtop_noplenumZ1633x433_ndtw.exo
     use_edges: no
-    check_for_missing_bcs: yes
     automatic_decomposition_type: rcb
+    activate_aura : yes
 
     time_step_control:
      target_courant: 10.0
@@ -39,7 +38,7 @@ realms:
 
     equation_systems:
       name: theEqSys
-      max_iterations: 2
+      max_iterations: 3
 
       solver_system_specification:
         velocity: solve_scalar
@@ -117,17 +116,17 @@ realms:
 
       options:
         - hybrid_factor:
-            velocity: 1.0
+            velocity: 0.0
             turbulent_ke: 1.0
             specific_dissipation_rate: 1.0
 
-        - alpha_upw:
-            velocity: 1.0
+        - alpha:
+            velocity: 0.0
 
         - limiter:
             pressure: no
-            velocity: yes
-            turbulent_ke: yes
+            velocity: no
+            turbulent_ke: no
             specific_dissipation_rate: yes
 
         - projected_nodal_gradient:
@@ -143,7 +142,7 @@ realms:
             SDRWallFactor: 0.625
 
     turbulence_averaging:
-      time_filter_interval: 100000.0
+      time_filter_interval: 0.7
 
       specifications:
 
@@ -165,7 +164,7 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_bottomwall
-              number_of_points: 100
+              number_of_points: 500
               tip_coordinates: [-6.39, 0.0, 0.0]
               tail_coordinates: [4.0, 0.0, 0.0]
 
@@ -180,7 +179,7 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile0
-              number_of_points: 100
+              number_of_points: 200
               tip_coordinates: [-2.14, 0.0, 0.0]
               tail_coordinates: [-2.14, 0.0, 0.9]
 
@@ -195,8 +194,8 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile1
-              number_of_points: 100
-              tip_coordinates: [0.65, 0.0, 0.0]
+              number_of_points: 200
+              tip_coordinates: [0.65, 0.0, 0.116101]
               tail_coordinates: [0.65, 0.0, 0.9]
 
           output_variables:
@@ -210,8 +209,8 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile2
-              number_of_points: 100
-              tip_coordinates: [0.66, 0.0, 0.0]
+              number_of_points: 200
+              tip_coordinates: [0.66, 0.0, 0.112975]
               tail_coordinates: [0.66, 0.0, 0.9]
 
           output_variables:
@@ -225,8 +224,8 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile3
-              number_of_points: 100
-              tip_coordinates: [0.8, 0.0, 0.0]
+              number_of_points: 200
+              tip_coordinates: [0.8, 0.0, 0.0245493]
               tail_coordinates: [0.8, 0.0, 0.9]
 
           output_variables:
@@ -240,8 +239,8 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile4
-              number_of_points: 100
-              tip_coordinates: [0.9, 0.0, 0.0]
+              number_of_points: 200
+              tip_coordinates: [0.9, 0.0, 0.00476345]
               tail_coordinates: [0.9, 0.0, 0.9]
 
           output_variables:
@@ -255,7 +254,7 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile5
-              number_of_points: 100
+              number_of_points: 200
               tip_coordinates: [1.0, 0.0, 0.0]
               tail_coordinates: [1.0, 0.0, 0.9]
 
@@ -270,7 +269,7 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile6
-              number_of_points: 100
+              number_of_points: 200
               tip_coordinates: [1.1, 0.0, 0.0]
               tail_coordinates: [1.1, 0.0, 0.9]
 
@@ -285,7 +284,7 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile7
-              number_of_points: 100
+              number_of_points: 200
               tip_coordinates: [1.2, 0.0, 0.0]
               tail_coordinates: [1.2, 0.0, 0.9]
 
@@ -300,7 +299,7 @@ realms:
 
           line_of_site_specifications:
             - name: results/probe_profile8
-              number_of_points: 100
+              number_of_points: 200
               tip_coordinates: [1.3, 0.0, 0.0]
               tail_coordinates: [1.3, 0.0, 0.9]
 
@@ -322,7 +321,7 @@ realms:
 
     output:
       output_data_base_name: results/wallHump.e
-      output_frequency: 100
+      output_frequency: 1000
       output_node_set: no
       output_variables:
        - velocity
@@ -337,14 +336,14 @@ realms:
 
     restart:
       restart_data_base_name: restart/wallHump.rst
-      output_frequency: 5000
+      restart_frequency: 1000
 
 Time_Integrators:
   - StandardTimeIntegrator:
       name: ti_1
       start_time: 0
-      time_step: 1.0e-10
-      termination_time: 0.3
+      time_step: 1.0e-6
+      termination_time: 1.0
       time_stepping_type: adaptive
       time_step_count: 0
       second_order_accuracy: yes

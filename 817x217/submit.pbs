@@ -2,7 +2,7 @@
 
 #PBS -l walltime=48:00:00  # WALLTIME limit
 #PBS -q batch-h  # queue
-#PBS -l nodes=1:ppn=24  # Number of nodes, put x processes on each
+#PBS -l nodes=2:ppn=24  # Number of nodes, put x processes on each
 #PBS -N wallHump-817x217  # Name of job
 #PBS -A windFlowModeling  # Project handle
 #PBS -m ae  # Email at start/end of job
@@ -21,4 +21,4 @@ cd $PBS_O_WORKDIR
 } &> /dev/null
 
 rm -rf results restart;
-mpiexec -np 24 ${HOME}/Nalu/build/naluX -i wallHump.i
+mpiexec -np 48 ../naluX -i wallHump.i

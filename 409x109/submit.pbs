@@ -21,4 +21,4 @@ cd $PBS_O_WORKDIR
 } &> /dev/null
 
 rm -rf results restart;
-mpiexec -np 24 ${HOME}/Nalu/build/naluX -i wallHump.i
+mpiexec -np 24 ../naluX -i wallHump.i
