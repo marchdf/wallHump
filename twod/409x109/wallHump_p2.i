@@ -316,15 +316,15 @@ realms:
               field_size: 3
 
 
-    # post_processing:
+    post_processing:
 
-    # - type: surface
-    #   physics: surface_force_and_moment
-    #   output_file_name: results_p2/wallHump.dat
-    #   frequency: 100
-    #   parameters: [0,0]
-    #   target_name: bottomwall
-
+    - type: surface
+      physics: surface_force_and_moment
+      output_file_name: results_p2/wallHump.dat
+      frequency: 100
+      parameters: [0,0]
+      target_name: bottomwall
+ 
     output:
       output_data_base_name: results_p2/wallHump.e
       output_frequency: 100

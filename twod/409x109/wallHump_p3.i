@@ -11,8 +11,8 @@ linear_solvers:
     method: gmres
     preconditioner: sgs
     tolerance: 1e-5
-    max_iterations: 75
-    kspace: 75
+    max_iterations: 50
+    kspace: 50
     output_level: 0
 
   - name: solve_cont
@@ -20,8 +20,8 @@ linear_solvers:
     method: gmres
     preconditioner: muelu
     tolerance: 1e-5
-    max_iterations: 250
-    kspace: 250
+    max_iterations: 100
+    kspace: 100
     output_level: 0
     muelu_xml_file_name: ../../muelu.xml
     recompute_preconditioner: no
@@ -37,10 +37,10 @@ linear_solvers:
 realms:
 
   - name: realm_1
-    mesh: hump2newtop_noplenumZ817x217_2D_p2_ndtw.exo
+    mesh: hump2newtop_noplenumZ409x109_2D_p3_ndtw.exo
     use_edges: no
     automatic_decomposition_type: rcb
-    polynomial_order: 2
+    polynomial_order: 3
     support_inconsistent_multi_state_restart: yes
 
     time_step_control:
@@ -169,7 +169,7 @@ realms:
         #   from_target_part: bottomwall
 
         #   line_of_site_specifications:
-        #     - name: results_p2/probe_bottomwall
+        #     - name: results_p3/probe_bottomwall
         #       number_of_points: 500
         #       tip_coordinates: [-6.39, 0.0]
         #       tail_coordinates: [4.0, 0.0]
@@ -184,7 +184,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile0
+            - name: results_p3/probe_profile0
               number_of_points: 200
               tip_coordinates: [-2.14, 0.0]
               tail_coordinates: [-2.14, 0.9]
@@ -199,7 +199,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile1
+            - name: results_p3/probe_profile1
               number_of_points: 200
               tip_coordinates: [0.65, 0.116101]
               tail_coordinates: [0.65, 0.9]
@@ -214,7 +214,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile2
+            - name: results_p3/probe_profile2
               number_of_points: 200
               tip_coordinates: [0.66, 0.112975]
               tail_coordinates: [0.66, 0.9]
@@ -229,7 +229,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile3
+            - name: results_p3/probe_profile3
               number_of_points: 200
               tip_coordinates: [0.8, 0.0245493]
               tail_coordinates: [0.8, 0.9]
@@ -244,7 +244,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile4
+            - name: results_p3/probe_profile4
               number_of_points: 200
               tip_coordinates: [0.9, 0.00476345]
               tail_coordinates: [0.9, 0.9]
@@ -259,7 +259,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile5
+            - name: results_p3/probe_profile5
               number_of_points: 200
               tip_coordinates: [1.0, 0.0]
               tail_coordinates: [1.0, 0.9]
@@ -274,7 +274,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile6
+            - name: results_p3/probe_profile6
               number_of_points: 200
               tip_coordinates: [1.1, 0.0]
               tail_coordinates: [1.1, 0.9]
@@ -289,7 +289,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile7
+            - name: results_p3/probe_profile7
               number_of_points: 200
               tip_coordinates: [1.2, 0.0]
               tail_coordinates: [1.2, 0.9]
@@ -304,7 +304,7 @@ realms:
           from_target_part: Unspecified-2-QUAD
 
           line_of_site_specifications:
-            - name: results_p2/probe_profile8
+            - name: results_p3/probe_profile8
               number_of_points: 200
               tip_coordinates: [1.3, 0.0]
               tail_coordinates: [1.3, 0.9]
@@ -320,13 +320,13 @@ realms:
 
     - type: surface
       physics: surface_force_and_moment
-      output_file_name: results_p2/wallHump.dat
+      output_file_name: results_p3/wallHump.dat
       frequency: 100
       parameters: [0,0]
       target_name: bottomwall
-
+ 
     output:
-      output_data_base_name: results_p2/wallHump.e
+      output_data_base_name: results_p3/wallHump.e
       output_frequency: 100
       output_node_set: no
       output_variables:
@@ -341,7 +341,7 @@ realms:
        - turbulent_viscosity
 
     restart:
-      restart_data_base_name: restart_p2/wallHump.rst
+      restart_data_base_name: restart_p3/wallHump.rst
       restart_frequency: 1000
       restart_time: 0
 

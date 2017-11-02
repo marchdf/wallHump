@@ -3,5 +3,8 @@
 *.o*
 __pycache__
 *.pdf
-restart
-results
+restart*
+results*
+*.exo
+*.cgns
+naluX
