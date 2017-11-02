@@ -4,7 +4,7 @@
 #PBS -q batch-h  # queue
 #PBS -l nodes=1:ppn=24  # Number of nodes, put x processes on each
 #PBS -N wallHump-103x28  # Name of job
-#PBS -A windFlowModeling  # Project handle
+#PBS -A windsim  # Project handle
 #PBS -m ae  # Email at start/end of job
 #PBS -j oe  # Combine output and error file
 #PBS -M marc.henrydefrahan@nrel.gov
