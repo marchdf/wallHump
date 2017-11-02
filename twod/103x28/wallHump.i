@@ -72,7 +72,7 @@ realms:
         target_name: [Unspecified-2-QUAD]
         value:
           pressure: 0
-          velocity: [34.6,0.0,0.0]
+          velocity: [34.6,0.0]
           turbulent_ke: 0.00108
           specific_dissipation_rate: 7710.9
 
@@ -91,7 +91,7 @@ realms:
     - wall_boundary_condition: bc_wall
       target_name: bottomwall
       wall_user_data:
-        velocity: [0,0,0]
+        velocity: [0,0]
         turbulent_ke: 0.0
         use_wall_function: no
 
@@ -102,14 +102,14 @@ realms:
     - inflow_boundary_condition: bc_inflow
       target_name: inlet
       inflow_user_data:
-        velocity: [34.6,0.0,0.0]
+        velocity: [34.6,0.0]
         turbulent_ke: 0.00108
         specific_dissipation_rate: 7710.9
 
     - open_boundary_condition: bc_open
       target_name: outlet
       open_user_data:
-        velocity: [0,0,0]
+        velocity: [0,0]
         pressure: 0.0
         turbulent_ke: 0.00108
         specific_dissipation_rate: 7710.9
@@ -140,7 +140,7 @@ realms:
             specific_dissipation_rate: element
 
         - input_variables_from_file:
-            minimum_distance_to_wall: ndtw
+            minimum_distance_to_wall: minimum_distance_to_wall
 
         - turbulence_model_constants:
             SDRWallFactor: 0.625
@@ -189,9 +189,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile1
           from_target_part: Unspecified-2-QUAD
@@ -204,9 +204,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile2
           from_target_part: Unspecified-2-QUAD
@@ -219,9 +219,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile3
           from_target_part: Unspecified-2-QUAD
@@ -234,9 +234,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile4
           from_target_part: Unspecified-2-QUAD
@@ -249,9 +249,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile5
           from_target_part: Unspecified-2-QUAD
@@ -264,9 +264,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile6
           from_target_part: Unspecified-2-QUAD
@@ -279,9 +279,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile7
           from_target_part: Unspecified-2-QUAD
@@ -294,9 +294,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
         - name: probe_profile8
           from_target_part: Unspecified-2-QUAD
@@ -309,9 +309,9 @@ realms:
 
           output_variables:
             - field_name: velocity
-              field_size: 3
+              field_size: 2
             - field_name: reynolds_stress
-              field_size: 6
+              field_size: 3
 
 
     post_processing:
