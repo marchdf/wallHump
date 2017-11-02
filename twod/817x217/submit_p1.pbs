@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#PBS -l walltime=48:00:00  # WALLTIME limit
+#PBS -q batch-h  # queue
+#PBS -l nodes=2:ppn=24  # Number of nodes, put x processes on each
+#PBS -N wallHump-817x217  # Name of job
+#PBS -A windsim  # Project handle
+#PBS -m ae  # Email at start/end of job
+#PBS -j oe  # Combine output and error file
+#PBS -M marc.henrydefrahan@nrel.gov
+echo $PBS_O_WORKDIR
+cd $PBS_O_WORKDIR
+
+#  Put your job commands after this line
+{
+    module purge 
+    module use /nopt/nrel/apps/modules/candidate/modulefiles
+    module load openmpi-gcc/1.10.0-5.2.0
+    module load gcc/5.2.0 
+    module load python/2.7.8
+} &> /dev/null
+
+rm -rf results_p1 restart_p1;
+mpiexec -np 48 ../naluX.hypre -i wallHump_p1.i
