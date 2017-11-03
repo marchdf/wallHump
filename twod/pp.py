@@ -246,6 +246,7 @@ if __name__ == '__main__':
     reattachement_exp = 1.1
     pname = 'profiles.dat'
     wname = 'wall_vars.dat'
+    sname = 'points.dat'
 
     lst_profiles = []
     lst_wall = []
@@ -309,3 +310,4 @@ if __name__ == '__main__':
     walldf = pd.concat(lst_wall, ignore_index=True)
     profiles.to_csv(pname, index=False)
     walldf.to_csv(wname, index=False)
+    points_df.to_csv(sname, index=False)

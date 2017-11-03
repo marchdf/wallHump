@@ -214,202 +214,36 @@ if __name__ == '__main__':
     fname = os.path.join(os.path.abspath('../nasa_data'), 'profiles_exp.dat')
     df = pd.read_csv(fname, comment='#')
 
-    x = 0.65
-    subdf = df[df['x'] == x]
-    plt.figure(0)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
+    xs = [0.65, 0.8, 1.0, 1.1, 1.2, 1.3, -2.14]
+    cnt = 0
+    for k, x in enumerate(xs):
 
-    plt.figure(1)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
+        subdf = df[df['x'] == x]
+        plt.figure(cnt)
+        cnt += 1
+        p = plt.plot(subdf['u'],
+                     subdf['y'],
+                     ls='None',
+                     lw=1,
+                     color=cmap[-1],
+                     marker=markertype[0],
+                     mec=cmap[-1],
+                     mfc=cmap[-1],
+                     ms=6,
+                     label='Exp. x={0:.2f}'.format(x))
 
-    x = 0.8
-    subdf = df[df['x'] == x]
-    plt.figure(2)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    plt.figure(3)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    x = 0.9
-    subdf = df[df['x'] == x]
-    plt.figure(4)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    plt.figure(5)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    x = 1.0
-    subdf = df[df['x'] == x]
-    plt.figure(6)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    plt.figure(7)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    x = 1.1
-    subdf = df[df['x'] == x]
-    plt.figure(8)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    plt.figure(9)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    x = 1.2
-    subdf = df[df['x'] == x]
-    plt.figure(10)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    plt.figure(11)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    x = 1.3
-    subdf = df[df['x'] == x]
-    plt.figure(12)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    plt.figure(13)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
-
-    x = -2.14
-    fname = os.path.join(os.path.abspath('../nasa_data'), 'u_inflow_exp.dat')
-    df = pd.read_csv(fname, comment='#')
-    plt.figure(14)
-    p = plt.plot(df['u'] / u0,
-                 df['y'] / chord,
-                 ls='None',
-                 lw=1,
-                 color=cmap[-1],
-                 marker=markertype[0],
-                 mec=cmap[-1],
-                 mfc=cmap[-1],
-                 ms=6,
-                 label='Exp. x={0:.2f}'.format(x))
+        plt.figure(cnt)
+        cnt += 1
+        p = plt.plot(subdf['uv'],
+                     subdf['y'],
+                     ls='None',
+                     lw=1,
+                     color=cmap[-1],
+                     marker=markertype[0],
+                     mec=cmap[-1],
+                     mfc=cmap[-1],
+                     ms=6,
+                     label='Exp. x={0:.2f}'.format(x))
 
     # Cp
     fname = os.path.join(os.path.abspath('../nasa_data'), 'cp_exp.dat')
@@ -447,141 +281,27 @@ if __name__ == '__main__':
     fname = os.path.join(os.path.abspath('../nasa_data'), 'profiles_cfl3d.dat')
     df = pd.read_csv(fname, comment='#')
 
-    x = 0.65
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(0)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
+    xs = [0.65, 0.8, 1.0, 1.1, 1.2, 1.3, -2.14]
+    cnt = 0
+    for k, x in enumerate(xs):
+        subdf = df[np.fabs(df['x'] - x) < 1e-3]
+        plt.figure(cnt)
+        cnt += 1
+        p = plt.plot(subdf['u'],
+                     subdf['y'],
+                     ls='-',
+                     lw=2,
+                     color=cmap[0],
+                     label='CFL3D x={0:.2f}'.format(x))
 
-    plt.figure(1)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = 0.8
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(2)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    plt.figure(3)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = 0.9
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(4)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    plt.figure(5)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = 1.0
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(6)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    plt.figure(7)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = 1.1
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(8)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    plt.figure(9)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = 1.2
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(10)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    plt.figure(11)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = 1.3
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(12)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    plt.figure(13)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
-
-    x = -2.14
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(14)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[0],
-                 label='CFL3D x={0:.2f}'.format(x))
+        plt.figure(cnt)
+        cnt += 1
+        p = plt.plot(subdf['uv'],
+                     subdf['y'],
+                     ls='-',
+                     lw=2,
+                     color=cmap[0],
+                     label='CFL3D x={0:.2f}'.format(x))
 
     # Cp
     fname = os.path.join(os.path.abspath('../nasa_data'), 'cp_cfl3d.dat')
@@ -603,179 +323,179 @@ if __name__ == '__main__':
                  color=cmap[0],
                  label='CFL3D')
 
-    # ======================================================================
-    # Nalu output
-    df = parse_velocity_probe(rdir, u0)
+    # # ======================================================================
+    # # Nalu output
+    # df = parse_velocity_probe(rdir, u0)
 
-    x = 0.65
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(0)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 0.65
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(0)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(1)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(1)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = 0.8
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(2)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 0.8
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(2)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(3)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(3)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = 0.9
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(4)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 0.9
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(4)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(5)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(5)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = 1.0
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(6)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 1.0
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(6)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(7)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(7)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = 1.1
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(8)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 1.1
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(8)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(9)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(9)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = 1.2
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(10)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 1.2
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(10)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(11)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(11)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = 1.3
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(12)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = 1.3
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(12)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    plt.figure(13)
-    p = plt.plot(subdf['uv'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # plt.figure(13)
+    # p = plt.plot(subdf['uv'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    x = -2.14
-    subdf = df[np.fabs(df['x'] - x) < 1e-3]
-    plt.figure(14)
-    p = plt.plot(subdf['u'],
-                 subdf['y'],
-                 ls='-',
-                 lw=2,
-                 color=cmap[1],
-                 label='Nalu x={0:.2f}'.format(x))
-    p[0].set_dashes(dashseq[1])
+    # x = -2.14
+    # subdf = df[np.fabs(df['x'] - x) < 1e-3]
+    # plt.figure(14)
+    # p = plt.plot(subdf['u'],
+    #              subdf['y'],
+    #              ls='-',
+    #              lw=2,
+    #              color=cmap[1],
+    #              label='Nalu x={0:.2f}'.format(x))
+    # p[0].set_dashes(dashseq[1])
 
-    # Cp and Cf
-    # fname = os.path.join(rdir, 'probe_bottomwall_0.dat')
-    # df = parse_flat_wall_probe(fname, yname)
+    # # Cp and Cf
+    # # fname = os.path.join(rdir, 'probe_bottomwall_0.dat')
+    # # df = parse_flat_wall_probe(fname, yname)
 
-    fname = os.path.join(rdir, 'wallHump.e')
-    df = parse_surface_probe(fname, yname)
+    # fname = os.path.join(rdir, 'wallHump.e')
+    # df = parse_surface_probe(fname, yname)
 
-    plt.figure(15)
-    p = plt.plot(df['x'],
-                 -df['cp'] - nasa_cp_shift,
-                 color=cmap[1],
-                 label='Nalu')
+    # plt.figure(15)
+    # p = plt.plot(df['x'],
+    #              -df['cp'] - nasa_cp_shift,
+    #              color=cmap[1],
+    #              label='Nalu')
 
-    plt.figure(16)
-    p = plt.plot(df['x'],
-                 df['cf'],
-                 color=cmap[1],
-                 label='Nalu')
+    # plt.figure(16)
+    # p = plt.plot(df['x'],
+    #              df['cf'],
+    #              color=cmap[1],
+    #              label='Nalu')
 
     # ======================================================================
     # Format the plots
