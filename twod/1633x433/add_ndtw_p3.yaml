@@ -20,6 +20,7 @@ nalu_preprocess:
   calc_ndtw2d:
     fluid_parts:
       - Unspecified-2-QUAD
+      - Unspecified-2-QUAD_se
 
     wall_parts:
       - bottomwall
