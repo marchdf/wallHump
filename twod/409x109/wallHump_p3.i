@@ -20,10 +20,10 @@ linear_solvers:
     method: gmres
     preconditioner: muelu
     tolerance: 1e-5
-    max_iterations: 100
-    kspace: 100
+    max_iterations: 200
+    kspace: 150
     output_level: 0
-    muelu_xml_file_name: ../../muelu.xml
+    muelu_xml_file_name: ../muelu_p3.xml
     recompute_preconditioner: no
   # - name: solve_cont
   #   type: hypre

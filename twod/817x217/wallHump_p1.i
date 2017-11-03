@@ -20,10 +20,10 @@ linear_solvers:
   #   method: gmres
   #   preconditioner: muelu
   #   tolerance: 1e-5
-  #   max_iterations: 250
-  #   kspace: 250
+  #   max_iterations: 200
+  #   kspace: 150
   #   output_level: 0
-  #   muelu_xml_file_name: ../../muelu.xml
+  #   muelu_xml_file_name: ../muelu_p1.xml
   #   recompute_preconditioner: no
   - name: solve_cont
     type: hypre
@@ -40,6 +40,7 @@ realms:
     mesh: hump2newtop_noplenumZ817x217_2D_ndtw.exo
     use_edges: no
     automatic_decomposition_type: rcb
+    activate_aura : yes
 
     time_step_control:
      target_courant: 10.0
