@@ -7,6 +7,7 @@
 #PBS -A windsim  # Project handle
 #PBS -m ae  # Email at start/end of job
 #PBS -j oe  # Combine output and error file
+#PBS -l qos=high
 #PBS -M marc.henrydefrahan@nrel.gov
 echo $PBS_O_WORKDIR
 cd $PBS_O_WORKDIR
@@ -21,4 +22,4 @@ cd $PBS_O_WORKDIR
 } &> /dev/null
 
 rm -rf results_p3 restart_p3;
-mpiexec -np 24 ../naluX -i wallHump_p3.i
+mpiexec -np 24 ../naluX.hypre -i wallHump_p3.i

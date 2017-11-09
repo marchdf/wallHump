@@ -56,62 +56,64 @@ if __name__ == '__main__':
     reattachement_exp = 1.1
     points_df = pd.read_csv(sname)
 
-    # Plot Nalu data
-    plt.figure(0)
-    p = plt.plot(points_df['nx'],
-                 points_df['separation'],
-                 lw=2,
-                 color=cmap[0],
-                 marker=markertype[0],
-                 mec=cmap[0],
-                 mfc=cmap[0],
-                 ms=10,
-                 label='Nalu')
+    print(points_df)
 
-    plt.figure(1)
-    p = plt.plot(points_df['nx'],
-                 points_df['reattachement'],
-                 lw=2,
-                 color=cmap[0],
-                 marker=markertype[0],
-                 mec=cmap[0],
-                 mfc=cmap[0],
-                 ms=10,
-                 label='Nalu')
+    # # Plot Nalu data
+    # plt.figure(0)
+    # p = plt.plot(points_df['nx'],
+    #              points_df['separation'],
+    #              lw=2,
+    #              color=cmap[0],
+    #              marker=markertype[0],
+    #              mec=cmap[0],
+    #              mfc=cmap[0],
+    #              ms=10,
+    #              label='Nalu')
 
-    # Plot experimental data
-    nmin = np.min(points_df.nx)
-    nmax = np.max(points_df.nx)
-    plt.figure(0)
-    p = plt.plot([nmin, nmax],
-                 [separation_exp, separation_exp],
-                 color=cmap[-1],
-                 label='Exp')
-    plt.figure(1)
-    p = plt.plot([nmin, nmax],
-                 [reattachement_exp, reattachement_exp],
-                 color=cmap[-1],
-                 label='Exp')
+    # plt.figure(1)
+    # p = plt.plot(points_df['nx'],
+    #              points_df['reattachement'],
+    #              lw=2,
+    #              color=cmap[0],
+    #              marker=markertype[0],
+    #              mec=cmap[0],
+    #              mfc=cmap[0],
+    #              ms=10,
+    #              label='Nalu')
 
-    # Format plots
-    plt.figure(0)
-    ax = plt.gca()
-    plt.xlabel(r"$N$", fontsize=22, fontweight='bold')
-    plt.ylabel(r"Separation", fontsize=22, fontweight='bold')
-    plt.setp(ax.get_xmajorticklabels(), fontsize=18, fontweight='bold')
-    plt.setp(ax.get_ymajorticklabels(), fontsize=18, fontweight='bold')
-    legend = ax.legend(loc='best')
-    plt.tight_layout()
-    # plt.savefig('separation.pdf', format='pdf')
-    plt.savefig('separation.png', format='png')
+    # # Plot experimental data
+    # nmin = np.min(points_df.nx)
+    # nmax = np.max(points_df.nx)
+    # plt.figure(0)
+    # p = plt.plot([nmin, nmax],
+    #              [separation_exp, separation_exp],
+    #              color=cmap[-1],
+    #              label='Exp')
+    # plt.figure(1)
+    # p = plt.plot([nmin, nmax],
+    #              [reattachement_exp, reattachement_exp],
+    #              color=cmap[-1],
+    #              label='Exp')
 
-    plt.figure(1)
-    ax = plt.gca()
-    plt.xlabel(r"$N$", fontsize=22, fontweight='bold')
-    plt.ylabel(r"Reattachement", fontsize=22, fontweight='bold')
-    plt.setp(ax.get_xmajorticklabels(), fontsize=18, fontweight='bold')
-    plt.setp(ax.get_ymajorticklabels(), fontsize=18, fontweight='bold')
-    legend = ax.legend(loc='best')
-    plt.tight_layout()
-    # plt.savefig('reattachement.pdf', format='pdf')
-    plt.savefig('reattachement.png', format='png')
+    # # Format plots
+    # plt.figure(0)
+    # ax = plt.gca()
+    # plt.xlabel(r"$N$", fontsize=22, fontweight='bold')
+    # plt.ylabel(r"Separation", fontsize=22, fontweight='bold')
+    # plt.setp(ax.get_xmajorticklabels(), fontsize=18, fontweight='bold')
+    # plt.setp(ax.get_ymajorticklabels(), fontsize=18, fontweight='bold')
+    # legend = ax.legend(loc='best')
+    # plt.tight_layout()
+    # # plt.savefig('separation.pdf', format='pdf')
+    # plt.savefig('separation.png', format='png')
+
+    # plt.figure(1)
+    # ax = plt.gca()
+    # plt.xlabel(r"$N$", fontsize=22, fontweight='bold')
+    # plt.ylabel(r"Reattachement", fontsize=22, fontweight='bold')
+    # plt.setp(ax.get_xmajorticklabels(), fontsize=18, fontweight='bold')
+    # plt.setp(ax.get_ymajorticklabels(), fontsize=18, fontweight='bold')
+    # legend = ax.legend(loc='best')
+    # plt.tight_layout()
+    # # plt.savefig('reattachement.pdf', format='pdf')
+    # plt.savefig('reattachement.png', format='png')

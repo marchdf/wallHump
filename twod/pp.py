@@ -238,7 +238,11 @@ if __name__ == '__main__':
     # ========================================================================
     # Setup
 
-    fdirs = ['103x28']
+    #fdirs = ['103x28']
+    #fdirs = ['205x55']
+    #fdirs = ['409x109']
+    #fdirs = ['817x217']
+    fdirs = ['103x28', '205x55', '409x109', '817x217', '1633x433']
     result_root = 'results_p'
     yname_root = 'wallHump_p'
     chord = 420
@@ -298,7 +302,8 @@ if __name__ == '__main__':
             # Append to previous dataframes
             lst_profiles.append(profiles)
             lst_wall.append(walldf)
-            points_df = points_df.append({'res': fdir,
+            points_df = points_df.append({'order': order,
+                                          'res': fdir,
                                           'nx': resolution[0],
                                           'ny': resolution[1],
                                           'separation': separation,

@@ -7,6 +7,7 @@
 #PBS -A windsim  # Project handle
 #PBS -m ae  # Email at start/end of job
 #PBS -j oe  # Combine output and error file
+#PBS -l qos=high
 #PBS -M marc.henrydefrahan@nrel.gov
 echo $PBS_O_WORKDIR
 cd $PBS_O_WORKDIR
