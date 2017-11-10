@@ -26,3 +26,8 @@ nalu_preprocess:
       - bottomwall
 
     wall_dist_name: minimum_distance_to_wall
+
+    fix_p3: true
+
+    ho_fluid_parts:
+      - Unspecified-2-QUAD_se

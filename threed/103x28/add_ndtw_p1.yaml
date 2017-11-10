@@ -6,9 +6,9 @@
 # Mandatory section for Nalu preprocessing
 nalu_preprocess:
   # Name of the input exodus database
-  input_db: hump2newtop_noplenumZ409x109_2D_p3.exo
+  input_db: hump2newtop_noplenumZ103x28x101_3D.exo
   # Name of the output exodus database
-  output_db: hump2newtop_noplenumZ409x109_2D_p3_ndtw.exo
+  output_db: hump2newtop_noplenumZ103x28x101_3D_ndtw.exo
 
   # Nalu preprocessor expects a list of tasks to be performed on the mesh and
   # field data structures
@@ -19,15 +19,9 @@ nalu_preprocess:
   # task name
   calc_ndtw2d:
     fluid_parts:
-      - Unspecified-2-QUAD
-      - Unspecified-2-QUAD_se
+      - Unspecified-2-HEX
 
     wall_parts:
       - bottomwall
 
     wall_dist_name: minimum_distance_to_wall
-
-    fix_p3: true
-
-    ho_fluid_parts:
-      - Unspecified-2-QUAD_se
