@@ -320,7 +320,7 @@ realms:
 
     - type: surface
       physics: surface_force_and_moment
-      output_file_name: results_p2/wallHump.dat
+      output_file_name: wallHump_p2.dat
       frequency: 100
       parameters: [0,0]
       target_name: bottomwall

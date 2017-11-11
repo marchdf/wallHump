@@ -23,7 +23,7 @@ linear_solvers:
   #   max_iterations: 200
   #   kspace: 150
   #   output_level: 0
-  #   muelu_xml_file_name: ../muelu_p1.xml
+  #   muelu_xml_file_name: ../muelu_p2.xml
   #   recompute_preconditioner: no
   - name: solve_cont
     type: hypre
@@ -37,7 +37,7 @@ linear_solvers:
 realms:
 
   - name: realm_1
-    mesh: hump2newtop_noplenumZ103x28x11_3D_ndtw.exo
+    mesh: hump2newtop_noplenumZ103x28x11_3D_p2_ndtw.exo
     use_edges: no
     automatic_decomposition_type: rcb
     polynomial_order: 2
@@ -123,7 +123,7 @@ realms:
 
     solution_options:
       name: myOptions
-      turbulence_model: sst-des
+      turbulence_model: sst_des
 
       options:
         - hybrid_factor:
@@ -328,7 +328,7 @@ realms:
 
     - type: surface
       physics: surface_force_and_moment
-      output_file_name: results_p2/wallHump.dat
+      output_file_name: wallHump.dat
       frequency: 100
       parameters: [0,0]
       target_name: bottomwall
@@ -339,7 +339,7 @@ realms:
       output_node_set: no
       output_variables:
        - velocity
-       - velocity_ra
+       - velocity_ra_one
        - pressure
        - pressure_force
        - tau_wall
@@ -350,8 +350,9 @@ realms:
        - turbulent_viscosity
 
     restart:
-      restart_data_base_name: restart_p1/wallHump.rst
+      restart_data_base_name: restart_p2/wallHump.rst
       restart_frequency: 1000
+      restart_time: 0
 
 Time_Integrators:
   - StandardTimeIntegrator:

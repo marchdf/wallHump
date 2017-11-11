@@ -21,4 +21,4 @@ cd $PBS_O_WORKDIR
 } &> /dev/null
 
 rm -rf results_p1 restart_p1;
-mpiexec -np 24 ../naluX.hypre -i wallHump_p1.i
+mpiexec -np 12 ../naluX.hypre -i wallHump_p1.i

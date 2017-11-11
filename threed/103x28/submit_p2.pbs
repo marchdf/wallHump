@@ -21,4 +21,4 @@ cd $PBS_O_WORKDIR
 } &> /dev/null
 
 rm -rf results_p2 restart_p2;
-mpiexec -np 24 ../naluX -i wallHump_p2.i
+mpiexec -np 8 ../naluX -i wallHump_p2.i

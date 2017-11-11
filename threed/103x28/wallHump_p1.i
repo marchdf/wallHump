@@ -37,7 +37,7 @@ linear_solvers:
 realms:
 
   - name: realm_1
-    mesh: hump2newtop_noplenumZ103x28x11_3D_ndtw.exo
+    mesh: hump2newtop_noplenumZ103x28x101_3D_ndtw.exo
     use_edges: no
     automatic_decomposition_type: rcb
 
@@ -121,7 +121,7 @@ realms:
 
     solution_options:
       name: myOptions
-      turbulence_model: sst-des
+      turbulence_model: sst_des
 
       options:
         - hybrid_factor:
@@ -326,7 +326,7 @@ realms:
 
     - type: surface
       physics: surface_force_and_moment
-      output_file_name: results_p1/wallHump.dat
+      output_file_name: wallHump_p1.dat
       frequency: 100
       parameters: [0,0]
       target_name: bottomwall
@@ -337,7 +337,7 @@ realms:
       output_node_set: no
       output_variables:
        - velocity
-       - velocity_ra
+       - velocity_ra_one
        - pressure
        - pressure_force
        - tau_wall
