@@ -216,7 +216,7 @@ if __name__ == '__main__':
     fdir = os.path.abspath('817x217')
     # fdir = os.path.abspath('1633x433')
     rdir = os.path.abspath(os.path.join(fdir, 'results'))
-    yname = os.path.join(fdir, 'wallHump.i')
+    yname = os.path.join(fdir, 'wallHump.yaml')
     u0, rho0, mu = parse_ic(yname)
     chord = 420
     nasa_cp_shift = -0.015
@@ -771,9 +771,6 @@ if __name__ == '__main__':
     p[0].set_dashes(dashseq[1])
 
     # Cp and Cf
-    #fname = os.path.join(rdir, 'probe_bottomwall_0.dat')
-    #df = parse_flat_wall_probe(fname, yname)
-
     fname = os.path.join(rdir, 'wallHump.e')
     df = parse_surface_probe(fname, yname)
 
