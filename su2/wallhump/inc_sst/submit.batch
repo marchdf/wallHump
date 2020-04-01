@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#SBATCH --job-name=wallhump
+#SBATCH --account=hfm
+#SBATCH --nodes=1
+#SBATCH --time=4:00:00
+#SBATCH -o %x.o%j
+
+module purge
+MODULES=modules
+COMPILER=gcc-7.4.0
+module unuse ${MODULEPATH}
+module use /nopt/nrel/ecom/hpacf/binaries/${MODULES}
+module use /nopt/nrel/ecom/hpacf/compilers/${MODULES}
+module use /nopt/nrel/ecom/hpacf/utilities/${MODULES}
+module use /nopt/nrel/ecom/hpacf/software/${MODULES}/${COMPILER}
+
+module load gcc
+module load mpich
+
+export SU2_RUN="../../bin"
+export PATH=$SU2_RUN:$PATH
+export PYTHONPATH=$SU2_RUN:$PYTHONPATH
+
+mpirun -n 36 SU2_CFD wallHump.cfg

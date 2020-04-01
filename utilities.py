@@ -15,7 +15,7 @@ def parse_ic(fname):
     """Parse the Nalu yaml input file for the initial conditions"""
     with open(fname, "r") as stream:
         try:
-            dat = yaml.load(stream)
+            dat = yaml.load(stream, Loader=yaml.FullLoader)
             u0 = float(
                 dat["realms"][0]["initial_conditions"][0]["value"]["velocity"][0]
             )

@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
     # ======================================================================
     # Setup stuff
-    nasa_cp_shift = 0.0  # -0.065
+    nasa_cp_shift = -0.065
     xs = [0.65, 0.8, 1.0, 1.1, 1.2, 1.3, -2.14]
 
     # ======================================================================
@@ -94,12 +94,10 @@ if __name__ == "__main__":
     fname = os.path.join(nasadir, "profiles_exp.dat")
     df = pd.read_csv(fname, comment="#")
 
-    cnt = 0
     for k, x in enumerate(xs):
 
         subdf = df[df["x"] == x]
-        plt.figure(cnt)
-        cnt += 1
+        plt.figure(k)
         p = plt.plot(
             subdf["u"],
             subdf["y"],
@@ -251,11 +249,47 @@ if __name__ == "__main__":
         p = plt.plot(
             df["x"], -df["cp"] - nasa_cp_shift, color=cmap[i + 1], lw=2, label="Nalu"
         )
-        p[0].set_dashes(dashseq[i + 1])
+        p[0].set_dashes(dashseq[-1])
 
         plt.figure("cf")
         p = plt.plot(df["x"], df["cf"], color=cmap[i + 1], lw=2, label="Nalu")
         p[0].set_dashes(dashseq[i + 1])
+
+    # ======================================================================
+    # SU2 output
+    su2dir = os.path.abspath("su2/wallhump/inc_sst")
+
+    # Profiles
+    fname = os.path.join(su2dir, "profiles.csv")
+    df = pd.read_csv(fname)
+    for k, x in enumerate(xs):
+
+        subdf = df[df["x"] == x]
+        plt.figure(k)
+        p = plt.plot(subdf["u"], subdf["z"], color=cmap[-2], lw=2, label="SU2")
+        p[0].set_dashes(dashseq[-2])
+
+    # Cp and Cf
+    fname = os.path.join(su2dir, "surface_flow.csv")
+    df = pd.read_csv(fname)
+    df.drop_duplicates(subset=["x"], inplace=True)
+    df["cf"] = np.sqrt(
+        df.Skin_Friction_Coefficient_x ** 2 + df.Skin_Friction_Coefficient_z ** 2
+    )
+
+    plt.figure("cp")
+    p = plt.plot(
+        df["x"],
+        -df["Pressure_Coefficient"] - nasa_cp_shift,
+        color=cmap[-2],
+        lw=2,
+        label="SU2",
+    )
+    p[0].set_dashes(dashseq[-2])
+
+    plt.figure("cf")
+    p = plt.plot(df["x"], df["cf"], color=cmap[-2], lw=2, label="SU2")
+    p[0].set_dashes(dashseq[-2])
 
     # ======================================================================
     # Format the plots
